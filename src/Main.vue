@@ -1,25 +1,28 @@
 <template>
-        <BotonOnOff :active="modoOscuro" :toggle="cambiaModo"/>
-        <TextoPersonalizado texto="Otro texto" :esOscuro="modoOscuro"/>
+    <AboutUsView v-if="pagina === 'AboutUs'"/>
+    <ContactView v-if="pagina === 'Contact'"/>
+    <HomeView v-if="pagina === 'Home'"/>
+    <MathView v-if="pagina === 'Math'"/>
+    <SeriesView v-if="pagina === 'Series'"/>
+    <div>
+        <button id="Home" @click="redirige('Home')">Home</button>
+        <button id="Contact" @click="redirige('Contact')">Contact</button>
+        <button id="AboutUs" @click="redirige('AboutUs')">AboutUs</button>
+        <button id="Math" @click="redirige('Math')">Math</button>
+        <button id="Series" @click="redirige('Series')">Series</button>
+    </div>
 </template>
 
 <script setup lang="ts">
-// //@ts-ignore
-// import ListaTareas from "@components/ListaTareas"
-// //@ts-ignore
-// import MiContador from "@components/MiContador"
-// //@ts-ignore
-// import ContadorComposable from "@components/ContadorComposable"
-import {ref} from 'vue';
-//@ts-ignore
-import BotonOnOff from './components/BotonOnOff.vue';
-//@ts-ignore
-import TextoPersonalizado from './components/TextoPersonalizado.vue';
+import {ref} from "vue"
+import {Routes} from "./models"
+import {AboutUsView,ContactView,HomeView,MathView,SeriesView} from "./views"
+const pagina = ref<Routes>("Home")
 
-const modoOscuro = ref(true)
-const cambiaModo = () => {
-    modoOscuro.value = !modoOscuro.value
+const redirige = (ruta: Routes) => {
+    pagina.value = ruta
 }
+
 </script>
 
 <style scoped>
