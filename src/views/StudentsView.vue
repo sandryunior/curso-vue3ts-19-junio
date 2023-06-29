@@ -11,14 +11,14 @@
 </template>
 
 <script setup lang="ts">
-import { useStudentsStore, Student } from "../stores/studentsStore"
+import { useStudentsStore } from "../stores/studentsStore"
 const studentsStore = useStudentsStore()
 
 const nuevoEstudiante = () => {
   studentsStore.addStudent({
     name: "Sandra",
     email: "sandra@sandra.com",
-    mark: 2,
+    mark: 2
   })
 }
 

@@ -6,4 +6,3 @@ export const phrases: string[] = [
     "Eres más inútil que la primera rebanada del pan de molde",
     "El 67% de las estadísticas son falsas"
   ]
-  
