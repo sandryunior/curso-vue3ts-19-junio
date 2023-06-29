@@ -5,6 +5,7 @@
         <a class="navbar-brand">
           <span style="color: rgb(45, 173, 45)">Vue</span>nas tardes
         </a>
+        <span>{{ titulo }}</span>
         <ul class="navbar-nav">
           <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
@@ -24,6 +25,10 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const titulo = import.meta.env.VITE_APP_TITULO
+</script>
 
 <style scoped lang="scss">
 .view {
